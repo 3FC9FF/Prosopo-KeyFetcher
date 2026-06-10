@@ -33,7 +33,7 @@ const result = await (async () => {{
     configurable: true
   }});
   Object.defineProperty(globalThis, "location", {{
-    value: {{ href: "http://localhost/" }},
+    value: {{ href: "https://nigge.rs" }},
     configurable: true
   }});
 
@@ -113,7 +113,7 @@ def fetcher():
     print(f"bundle.js --> {h}")
     t = requests.get(f"https://js.prosopo.io/js/{h}").text
     e = t.split('(await import("./')[1].split('"')[0]
-    if not e.startswith("captchaRenderer-") and not e.endswith(".js"):
+    if not e.startswith("captchaRenderer-") or not e.endswith(".js"):
         return None
     print(f"{h} --> {e}")
     g = requests.get(f"https://js.prosopo.io/js/{e}").text
